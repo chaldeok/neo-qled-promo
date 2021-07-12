@@ -181,3 +181,31 @@ DynamicAdapt.prototype.arraySort = function (arr) {
 
 var da = new DynamicAdapt("max");
 da.init();
+"use strict";
+
+document.addEventListener('DOMContentLoaded', function () {
+  var links = document.querySelectorAll('.tabs-shifters__item');
+  var tabs = document.querySelectorAll('.tabs-content__item');
+
+  var _loop = function _loop(i) {
+    var link = links[i];
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var linkId = e.target.getAttribute('href').replace('#', '');
+      links.forEach(function (item) {
+        item.classList.remove('tabs-shifters__item_active');
+      });
+      tabs.forEach(function (item) {
+        item.classList.remove('tabs-content__item_active');
+      });
+      link.classList.add('tabs-shifters__item_active');
+      document.getElementById(linkId).classList.add('tabs-content__item_active');
+    });
+  };
+
+  for (var i = 0; i < links.length; i++) {
+    _loop(i);
+  }
+
+  document.querySelector('.tabs-shifters__item').click();
+});

@@ -8,6 +8,7 @@ const paths = require('../paths');
 
 const jsFiles = [
   './././app/js/dynamic-adaptive.js',
+  './././app/js/tabs.js',
 ] // очередность подключения файлов
 
 const scripts = () => {
