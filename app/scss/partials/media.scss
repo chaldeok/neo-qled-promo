@@ -1,0 +1,16 @@
+@mixin media-mob {
+  @media screen and (max-width: 768px) {
+    @content
+  }
+}
+@mixin media-desk-xl {
+  @media screen and (max-width: 1439px) {
+    @content
+  }
+}
+
+@mixin media-desk-xxl {
+  @media screen and (min-width: 1441px) {
+    @content
+  }
+}
